@@ -1,1 +1,1 @@
-just for learning
+基于微信公众平台的一个翻译服务，翻译结果从google获取
