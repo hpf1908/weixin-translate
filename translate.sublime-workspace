@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"rq",
+				"require"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
 				"req",
 				"require"
 			],
@@ -424,16 +432,8 @@
 				"head"
 			],
 			[
-				"rq",
-				"Request"
-			],
-			[
 				"sy",
 				"syncFile"
-			],
-			[
-				"re",
-				"reload"
 			],
 			[
 				"wa",
@@ -544,6 +544,8 @@
 	},
 	"file_history":
 	[
+		"/Users/hpf1908/projects/javascript/weixin-translate/app.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/controllers/page.js",
 		"/Users/hpf1908/projects/javascript/weixin-demo/app.js",
 		"/Users/hpf1908/projects/javascript/weixin-demo/controllers/page.js",
 		"/Users/hpf1908/projects/javascript/weixin-demo/package.json",
@@ -669,9 +671,7 @@
 		"/Users/hpf1908/projects/gitsearch/node_modules/node-oauth/index.js",
 		"/Users/hpf1908/projects/node-oauth/lib/oauth.js",
 		"/Users/hpf1908/projects/node-oauth/tests/oauth2.js",
-		"/Users/hpf1908/projects/node-oauth/Readme.md",
-		"/Users/hpf1908/projects/node-oauth/examples/term.ie.oauth-PLAINTEXT.js",
-		"/Users/hpf1908/projects/node-oauth/examples/term.ie.oauth-HMAC-SHA1.js"
+		"/Users/hpf1908/projects/node-oauth/Readme.md"
 	],
 	"find":
 	{

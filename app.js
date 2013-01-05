@@ -87,7 +87,3 @@ var port = 8024;
 app.listen(port);
 
 console.log("app listening on port %d in %s mode", port, app.settings.env);
-
-
-
-

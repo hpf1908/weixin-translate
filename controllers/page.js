@@ -22,7 +22,7 @@ var postIndex = eval(Jscex.compile("async", function (req, res) {
         weixinParser.parseString(req.rawData , function(err , result) {
             if(err == 0) {
                 request.get({
-                    url: 'http://translate.google.cn/translate_a/t?client=t&text='+ result.Content + '&hl=zh-CN&sl=zh-CN&tl=en&ie=UTF-8&oe=UTF-8&multires=1&prev=btn&ssel=0&tsel=0&sc=1'
+                     url: 'http://translate.google.cn/translate_a/t?client=t&text='+ result.Content + '&hl=zh-CN&sl=auto&tl=zh-CN&ie=UTF-8&oe=UTF-8&multires=1&otf=2&ssel=3&tsel=6&uptl=zh-CN&alttl=en&sc=1'
                 }, function (e, r, body) {
                     if(e) {
                         var testObj = {
