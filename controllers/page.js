@@ -15,48 +15,51 @@ var index = eval(Jscex.compile("async", function (req, res) {
     res.send(req.param('echostr'));     
 }));
 
-exports.index = Unjscexify.toRequestHandler(index);
+exports.index = Unjscexify.toRequestSendHandler(index);
+
+request.getAsync = Jscexify.fromStandard(request.get);
+request.postAsync = Jscexify.fromStandard(request.post);
+weixinParser.parseStringAsync = Jscexify.fromStandard(weixinParser.parseString);
 
 var postIndex = eval(Jscex.compile("async", function (req, res) {
-    if(req.rawData) {
-        weixinParser.parseString(req.rawData , function(err , result) {
-            if(err == 0) {
-                request.get({
-                     url: 'http://translate.google.cn/translate_a/t?client=t&text='+ result.Content + '&hl=zh-CN&sl=auto&tl=zh-CN&ie=UTF-8&oe=UTF-8&multires=1&otf=2&ssel=3&tsel=6&uptl=zh-CN&alttl=en&sc=1'
-                }, function (e, r, body) {
-                    if(e) {
-                        var testObj = {
-                            ToUserName   : result.FromUserName,
-                            FromUserName : result.ToUserName,
-                            content      : '拉取google翻译失败'
-                        }
-                        var returnXml = weixinGenerator.generateMsgTextXml(testObj);
-                        res.send(returnXml);
-                    } else {
-                        var str = eval('(' + body + ')');
 
-                        var testObj = {
-                            ToUserName   : result.FromUserName,
-                            FromUserName : result.ToUserName,
-                            content      : str[0][0][0]
-                        }
-                        var returnXml = weixinGenerator.generateMsgTextXml(testObj);
-                        res.send(returnXml);
-                    }
-                });
-            } else {
-                var testObj = {
-                    ToUserName   : result.FromUserName,
-                    FromUserName : result.ToUserName,
-                    content      : '不好意思，没接到数据'
-                }
-                var returnXml = weixinGenerator.generateMsgTextXml(testObj);
-                res.send(returnXml);
+    if(req.rawData) {
+        var weiXinResult = $await(weixinParser.parseStringAsync(req.rawData));
+        var query = encodeURIComponent(weiXinResult.Content);
+
+        var requestUrl = 'http://openapi.baidu.com/public/2.0/bmt/translate?client_id=oaYlA8gnUfwtGC19ewQMMKxE&q='+ query + '&from=auto&to=auto';
+        var translate = $await(request.postAsync(requestUrl));
+        var transResult = JSON.parse(translate.body);
+        var baiduDst = transResult.trans_result[0].dst;
+
+        if(transResult.to == 'zh') {
+            requestUrl = 'http://translate.google.cn/translate_a/t?client=t&text=' + query + '&hl=zh-CN&sl=en&tl=zh-CN&ie=UTF-8&oe=UTF-8&multires=1&otf=2&ssel=3&tsel=6&sc=1';
+        } else {
+            requestUrl = 'http://translate.google.cn/translate_a/t?client=t&text=' + query + '&hl=zh-CN&sl=zh-CN&tl=en&ie=UTF-8&oe=UTF-8&multires=1&otf=2&ssel=3&tsel=6&sc=1';
+        }
+
+        translate = $await(request.getAsync({
+                            url: requestUrl
+                        }));
+        try {
+            var str = eval('(' + translate.body + ')');
+            var googleDst = str[0][0][0];
+            var content = 'baidu:' + baiduDst + ' ';
+            content += 'google:' + googleDst + '\n';
+            var returnObj = {
+                ToUserName   : weiXinResult.FromUserName,
+                FromUserName : weiXinResult.ToUserName,
+                content      : content
             }
-        });
+            var returnXml = weixinGenerator.generateMsgTextXml(returnObj);
+            res.send(returnXml);
+        } catch(e) {
+            console.log(e);
+            res.send("");
+        }
     } else {
         res.send('');
     }
 }));
 
-exports.postIndex = Unjscexify.toRequestHandler(postIndex);
+exports.postIndex = Unjscexify.toRequestSendHandler(postIndex);

@@ -6,6 +6,13 @@ require("./jscex-async-powerpack").init(Jscex);
 
 //做一个支持
 Jscex.Unjscexify = {
+    toRequestSendHandler: function (fn) {
+        return function (req, res, next) {
+            fn(req, res).addEventListener("failure", function () {
+                res.send('');
+            }).start();
+        }
+    },
     toRequestHandler: function (fn) {
         return function (req, res, next) {
             fn(req, res).addEventListener("failure", function () {

@@ -4,12 +4,24 @@
 		"selected_items":
 		[
 			[
-				"rq",
-				"require"
+				"q",
+				"query"
+			],
+			[
+				"tr",
+				"transResult"
 			],
 			[
 				"re",
-				"request"
+				"result"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"rq",
+				"require"
 			],
 			[
 				"req",
@@ -502,23 +514,19 @@
 			[
 				"ei",
 				"editorElm"
-			],
-			[
-				"sho",
-				"showTip"
-			],
-			[
-				"sav",
-				"saveBtn"
-			],
-			[
-				"opt",
-				"opts"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "controllers/page.js",
+			"settings":
+			{
+				"buffer_size": 2528,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -544,8 +552,31 @@
 	},
 	"file_history":
 	[
-		"/Users/hpf1908/projects/javascript/weixin-translate/app.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/main.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/extends/jscex-start.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/routes.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/extends/jsonApi.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/oauth.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/vendor/cookie/index.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/package.json",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/uuid.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-oauth.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-params.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-pipes.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-tunnel.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-toJSON.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-headers.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-httpModule.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-https-strict.js",
 		"/Users/hpf1908/projects/javascript/weixin-translate/controllers/page.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/run.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-https.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/server.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-body.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/public/weixinXmlParser.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/node_modules/request/tests/test-timeout.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/extends/jscex-async-powerpack.js",
+		"/Users/hpf1908/projects/javascript/weixin-translate/app.js",
 		"/Users/hpf1908/projects/javascript/weixin-demo/app.js",
 		"/Users/hpf1908/projects/javascript/weixin-demo/controllers/page.js",
 		"/Users/hpf1908/projects/javascript/weixin-demo/package.json",
@@ -648,30 +679,7 @@
 		"/Users/hpf1908/projects/algorithm/link/test.js",
 		"/Users/hpf1908/projects/algorithm/link/node.js",
 		"/Users/hpf1908/projects/algorithm/sort/merge.js",
-		"/Users/hpf1908/projects/algorithm/sort/select.js",
-		"/Users/hpf1908/projects/algorithm/sort/shell.js",
-		"/Users/hpf1908/projects/algorithm/sort/bubble.js",
-		"/Users/hpf1908/projects/algorithm/sort/insert.js",
-		"/Users/hpf1908/projects/algorithm/readme.md",
-		"/Users/hpf1908/projects/gitsearch/views/home/page.html",
-		"/Users/hpf1908/projects/gitsearch/app.js",
-		"/Users/hpf1908/projects/gitsearch/controllers/page.js",
-		"/Users/hpf1908/projects/gitsearch/node_modules/oauth/lib/oauth2.js",
-		"/Users/hpf1908/projects/node-oauth/lib/oauth2.js",
-		"/Users/hpf1908/projects/gitsearch/views/home/login_fail.html",
-		"/Users/hpf1908/projects/gitsearch/views/home/login_success.html",
-		"/Users/hpf1908/projects/codeMonkey/controllers/auth.js",
-		"/Users/hpf1908/projects/codeMonkey/utils/params.js",
-		"/Users/hpf1908/projects/codeMonkey/controllers/comment.js",
-		"/Users/hpf1908/projects/geek/controllers/home.js",
-		"/Users/hpf1908/projects/gitsearch/node_modules/oauth/index.js",
-		"/Users/hpf1908/projects/gitsearch/routes.js",
-		"/Users/hpf1908/projects/node-oauth/examples/express-gdata/server.js",
-		"/Users/hpf1908/projects/gitsearch/node_modules/node-oauth/lib/oauth.js",
-		"/Users/hpf1908/projects/gitsearch/node_modules/node-oauth/index.js",
-		"/Users/hpf1908/projects/node-oauth/lib/oauth.js",
-		"/Users/hpf1908/projects/node-oauth/tests/oauth2.js",
-		"/Users/hpf1908/projects/node-oauth/Readme.md"
+		"/Users/hpf1908/projects/algorithm/sort/select.js"
 	],
 	"find":
 	{
@@ -689,6 +697,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"application/x-www-form-urlencoded",
+			"form",
+			"console",
+			"Request",
+			"initParams",
+			"{\n                                from :'auto',\n                                to   :'auto',\n                                client_id:'oaYlA8gnUfwtGC19ewQMMKxE',\n                                q :'哈哈'\n                            }",
+			"post",
 			"branchCount",
 			"deleteIndex",
 			"isLeaf",
@@ -809,14 +824,7 @@
 			"detectionType",
 			"detection",
 			"saveData",
-			"this.data",
-			"savedata",
-			"intersects",
-			"savedata",
-			"_draw",
-			"_detectEvent",
-			"saveData",
-			"data"
+			"this.data"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -834,8 +842,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "controllers/page.js",
+					"settings":
+					{
+						"buffer_size": 2528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								812,
+								812
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
